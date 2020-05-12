@@ -62,7 +62,7 @@ class exp {
 
 };
 
-exp::exp(int tree_size, int nPruebas, arbol_bb<DNI>* arbol) {  nPruebas_ = nPruebas;
+exp::exp(int tree_size, int nPruebas, arbol_bb<DNI>* arbol) { 
   nPruebas_ = nPruebas;
   tree_size_ = tree_size;
   arbol_ = arbol;
