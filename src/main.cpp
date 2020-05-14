@@ -1,7 +1,7 @@
 /**********************************************************************
 * Project           : Árboles Binarios de Búsqueda
 *
-* file             : Programa que contiene dos modos (demo y estadístico) para
+* file              : Programa que contiene dos modos (demo y estadístico) para
 *                    el uso de árboles binarios de búsqueda.
 *                     * Demo:        Permite insertar y eliminar elementos de un árbol a mano, visualizando el árbol en cada paso.
 *
