@@ -52,6 +52,11 @@ class arbol_bb {
 
    bool is_empty(void) { return (root_ == NULL); }
 
+   //Modif
+   const bool equilibrado(void);
+   const bool equilibrio_rama(nodo_bb<Clave>* nodo);
+   const int tam_rama(nodo_bb<Clave>* nodo);
+
    ostream& print(ostream& os = cout);
 
  private:
@@ -158,4 +163,34 @@ ostream& arbol_bb<Clave>::print(ostream& os) {
     }
   }
   return os;
+}
+
+
+//Modif
+template <class Clave>
+const bool arbol_bb<Clave>::equilibrado(void) {
+  return equilibrio_rama(root_);
+}
+
+template <class Clave>
+const bool arbol_bb<Clave>::equilibrio_rama(nodo_bb<Clave>* nodo) {
+  if (nodo == NULL)
+    return true;
+  int eq = tam_rama(nodo->get_izq()) - tam_rama(nodo->get_dch());
+  switch (eq) {
+    case -1:
+    case  0:
+    case  1:
+      return equilibrio_rama(nodo->get_izq()) && equilibrio_rama(nodo->get_dch());
+    default:
+      return false; //desde que una rama sea de diferente tamaño a otra (por más de 1): false
+  }
+}
+
+
+template <class Clave>
+const int arbol_bb<Clave>::tam_rama(nodo_bb<Clave>* nodo) {
+  if (nodo == NULL)
+    return 0;
+  return ( 1 + tam_rama(nodo->get_izq()) + tam_rama(nodo->get_dch()));
 }

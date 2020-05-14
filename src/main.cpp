@@ -61,6 +61,8 @@ int demo(void) {
   do {
     cout << endl;
     myTree.print();
+    cout << "\nEl árbol" << (myTree.equilibrado() ? "  " : " no ") 
+         << "está equilibrado.\n";
     cout << endl;
     do {
       cout <<  "\n[0] Salir\n"
